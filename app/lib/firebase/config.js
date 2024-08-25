@@ -6,17 +6,17 @@ import {getAuth } from 'firebase/auth';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCtQ3XMIw1_Jv2apghtnDRPwMC5QCXs2Ns",
-    authDomain: "gspace-83e05.firebaseapp.com",
-    databaseURL: "https://gspace-83e05.firebaseio.com",
-    projectId: "gspace-83e05",
-    storageBucket: "gspace-83e05.appspot.com",
-    messagingSenderId: "463896074228",
-    appId: "1:463896074228:web:ef829791103e2da470cba1"
+    apiKey: process.env.NEXT_PUBLIC_APIKEY,
+    authDomain: process.env.NEXT_PUBLIC_AUTHDOMAIN,
+    databaseURL: process.env.NEXT_PUBLIC_DATABASEURL,
+    projectId: process.env.NEXT_PUBLIC_PROJECTID,
+    storageBucket: process.env.NEXT_PUBLIC_STORAGEBUCKET,
+    messagingSenderId: process.env.NEXT_PUBLIC_MESSAGINGSENDERID,
+    appId: process.env.NEXT_PUBLIC_APPID,
 };
 
 // Initialize Firebase
-const fb_app = !getApps().length ? initializeApp(firebaseConfig) : getApps();
+const fb_app = !getApps().length ? initializeApp(firebaseConfig) : getApps()[0];
 const fb_auth = getAuth(fb_app);
 
 
