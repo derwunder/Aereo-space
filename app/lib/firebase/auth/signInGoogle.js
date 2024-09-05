@@ -30,3 +30,7 @@ export const signInGoogle = async () => {
       console.error(error);
     }
   };
+
+  export const signOut = () => {
+    fb_auth.signOut();
+  }
